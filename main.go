@@ -40,6 +40,7 @@ import (
 	"github.com/wtfutil/wtf/modules/ipaddresses/ipinfo"
 	"github.com/wtfutil/wtf/modules/jenkins"
 	"github.com/wtfutil/wtf/modules/jira"
+	"github.com/wtfutil/wtf/modules/kube"
 	"github.com/wtfutil/wtf/modules/mercurial"
 	"github.com/wtfutil/wtf/modules/nbascore"
 	"github.com/wtfutil/wtf/modules/newrelic"
@@ -219,6 +220,8 @@ func addWidget(app *tview.Application, pages *tview.Pages, widgetName string) {
 		widgets = append(widgets, jenkins.NewWidget(app, pages))
 	case "jira":
 		widgets = append(widgets, jira.NewWidget(app, pages))
+	case "kube":
+		widgets = append(widgets, kube.NewWidget(app, pages))
 	case "logger":
 		widgets = append(widgets, logger.NewWidget(app))
 	case "mercurial":
